@@ -32,7 +32,7 @@ hammingWeightGeneList fitnessType = runGA (mkStdGen 42) 100 initialGenes
           (mkMutate (1 / 2) mutateSeq)
     where initialGenes = S.fromList $ fmap S.fromList [[False, False, True],
                                                        [False, True, False]]
-          fitness = length . S.filter (== True)
+          fitness = S.length . S.filter (== True)
 
 hammingWeightGeneBits :: FitnessType -> GenoType (GeneBits Int)
 hammingWeightGeneBits fitnessType = runGA (mkStdGen 42) 100 initialGenes
