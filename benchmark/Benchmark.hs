@@ -21,7 +21,7 @@ hammingWeight fitnessType = runGA (mkStdGen 42) 2000 initialGenes
             , [False, True, False, False, True, False]
             , [False, False, True,False, False, True]
             , [False, True, False, False, True, False]]
-          fitness = length . S.filter (== True)
+          fitness = S.length . S.filter (== True)
           crossOver g g' = do
             let l = E.assert (S.length g == S.length g') (S.length g)
             i <- randomRSt (0, E.assert (l > 0) (l - 1))
