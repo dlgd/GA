@@ -183,4 +183,4 @@ script:
   esac
   set +ex
 after_success:
-- ./config/publish_doc.sh
+- bash -x ./config/publish_doc.sh
