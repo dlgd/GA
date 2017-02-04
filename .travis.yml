@@ -57,36 +57,36 @@ matrix:
   #     apt:
   #       packages:
   #       - libgmp-dev
-  # - env: BUILD=stack ARGS="--resolver lts-2"
-  #   compiler: ": #stack 7.8.4"
-  #   addons:
-  #     apt:
-  #       packages:
-  #       - libgmp-dev
-  # - env: BUILD=stack ARGS="--resolver lts-3"
-  #   compiler: ": #stack 7.10.2"
-  #   addons:
-  #     apt:
-  #       packages:
-  #       - libgmp-dev
-  # - env: BUILD=stack ARGS="--resolver lts-6"
-  #   compiler: ": #stack 7.10.3"
-  #   addons:
-  #     apt:
-  #       packages:
-  #       - libgmp-dev
+  - env: BUILD=stack ARGS="--resolver lts-2"
+    compiler: ": #stack 7.8.4"
+    addons:
+      apt:
+        packages:
+        - libgmp-dev
+  - env: BUILD=stack ARGS="--resolver lts-3"
+    compiler: ": #stack 7.10.2"
+    addons:
+      apt:
+        packages:
+        - libgmp-dev
+  - env: BUILD=stack ARGS="--resolver lts-6"
+    compiler: ": #stack 7.10.3"
+    addons:
+      apt:
+        packages:
+        - libgmp-dev
   - env: BUILD=stack ARGS="--resolver lts-7"
     compiler: ": #stack 8.0.1"
     addons:
       apt:
         packages:
         - libgmp-dev
-  # - env: BUILD=stack ARGS="--resolver nightly"
-  #   compiler: ": #stack nightly"
-  #   addons:
-  #     apt:
-  #       packages:
-  #       - libgmp-dev
+  - env: BUILD=stack ARGS="--resolver nightly"
+    compiler: ": #stack nightly"
+    addons:
+      apt:
+        packages:
+        - libgmp-dev
   # - env: BUILD=stack ARGS=""
   #   compiler: ": #stack default osx"
   #   os: osx
@@ -153,7 +153,7 @@ install:
       ;;
   esac
   set +ex
-- stack install haddock
+# - stack install haddock
 script:
 - |
   set -ex
@@ -182,5 +182,5 @@ script:
       ;;
   esac
   set +ex
-after_success:
-- bash -x ./config/publish_doc.sh
+# after_success:
+# - bash -x ./config/publish_doc.sh
